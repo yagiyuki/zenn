@@ -189,7 +189,7 @@ from TABLE
 order by COL asc;
 ```
 
-```oython
+```python
 df.sort_values(by=['COL'], ascending=True)
 ```
 
@@ -201,7 +201,7 @@ from TABLE
 order by COL desc;
 ```
 
-```oython
+```python
 df.sort_values(by=['COL'], ascending=False)
 ```
 
@@ -216,4 +216,48 @@ FROM TABLE
 ```python
 df[~df.duplicated(subset=['COL1'])].loc[:, ["COL1", "COL2"]]
 ```
+
+## 集合関数
+
+```sql
+SELECT SUM(COL),MAX(COL),MIN(COL),AVG(COL),COUNT(COL)
+FROM TABLE
+```
+
+```python
+df['COL'].sum() # sum by sql
+df['COL'].min() # min by sql
+df['COL'].max() # max by sql
+df['COL'].mean() # avg by sql
+len(df) # count by sql
+```
+
+
+## グループ化
+
+```sql
+select COL1, AVG(COL2)
+from TABLE
+group by COL1;
+```
+
+```python
+df_mean=df.groupby("COL1").mean()
+df_mean.loc[:, ["COL2"]]
+```
+
+## グループ化の検索
+
+```sql
+select COL1, AVG(COL2)
+from TABLE
+group by COL1
+HAVING AVG(COL2) > 1000
+```
+
+```python
+df_mean=df.groupby("COL1").mean()
+df_mean.query("COL2 > 1000").loc[:, ["COL2"]]
+```
+
 
