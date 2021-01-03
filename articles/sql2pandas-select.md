@@ -146,12 +146,12 @@ df.query('COL >= 1000 and date <= 2000')
 ```sql
 SELECT *
 FROM TABLE
-WHERE NAMEL LIKE '中%';
--- 中で始まる名前の行を抽出 例: 中田
+WHERE NAME LIKE '中%';
+-- NAMEカラムが中で始まる名前の行を抽出 例: 中田
 ```
 
 ```python
-df.query('item.str.startswith("田")', engine='python')
+df.query('NAME.str.startswith("田")', engine='python')
 ```
 
 ### パターンマッチング(後方)
@@ -159,12 +159,12 @@ df.query('item.str.startswith("田")', engine='python')
 ```sql
 SELECT *
 FROM TABLE
-WHERE NAMEL LIKE '%中';
--- 中で終わる名前の行を抽出 例: 田中
+WHERE NAME LIKE '%中';
+-- NAMEカラムが中で終わる名前の行を抽出 例: 田中
 ```
 
 ```python
-df.query('item.str.endswith("田")', engine='python')
+df.query('NAME.str.endswith("田")', engine='python')
 ```
 
 ### パターンマッチング(部分)
@@ -172,12 +172,12 @@ df.query('item.str.endswith("田")', engine='python')
 ```sql
 SELECT *
 FROM TABLE
-WHERE NAMEL LIKE '%中%';
--- 中を含む名前の行を抽出 例: 中田、田中、三田村
+WHERE NAME LIKE '%中%';
+-- NAMEカラムが中を含む名前の行を抽出 例: 中田、田中、三田村
 ```
 
 ```python
-df.query('item.str.contains("田")', engine='python')
+df.query('NAME.str.contains("田")', engine='python')
 ```
 
 ## ソート(ORDER BY)
