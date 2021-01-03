@@ -73,11 +73,11 @@ df.query('COL != "hoge"')
 ```sql
 SELECT *
 FROM TABLE
-WHERE COL1 > 1000;
+WHERE COL > 1000;
 ```
 
 ```python
-df.query('COL1 > 1000')
+df.query('COL > 1000')
 ```
 
 ### 複合条件(または)
