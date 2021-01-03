@@ -1,5 +1,5 @@
 ---
-title: "sqlからpandasを逆引き(select編)"
+title: "sqlからpandasを逆引き(SELECT編)"
 emoji: "🐼"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["python", "機械学習"]
@@ -8,10 +8,10 @@ published: false
 
 こんにちは。ヤギユキ([@yagiyuki06](https://twitter.com/yagiyuki06))です。
 
-SQL のクエリから、Pandas のメソッドを逆引きする情報を作成しました。
+SQLのクエリから、Pandas のメソッドを逆引きする情報を作成しました。
 SQLは知っているけど、Pandasはあまり知らないエンジニアのための情報です。
 
-今回は、SQLのselect文をターゲットとします。
+今回は、SQLのSELECT文をターゲットとします。
 
 ## 列選択
 
@@ -24,7 +24,7 @@ FROM TABLE;
 df.loc[:, ["COL1", "COL2"]]
 ```
 
-## 条件指定(where)
+## 条件指定(WHERE)
 
 条件指定は、queryメソッドを使います。
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html
@@ -46,8 +46,8 @@ df[(df["COL1"]=="hoge") & (df["COL2"] != "huga")]
 
 ```sql
 SELECT *
-from TABLE
-where COL1 = 'hoge';
+FROM TABLE
+WHERE COL1 = 'hoge';
 ```
 
 ```python
@@ -59,8 +59,8 @@ df.query('COL1 == "hoge"')
 
 ```sql
 SELECT *
-from TABLE
-where COL1 <> 'hoge';
+FROM TABLE
+WHERE COL1 <> 'hoge';
 ```
 
 ```python
@@ -80,7 +80,7 @@ WHERE COL1 > 1000;
 df.query('COL1 > 1000')
 ```
 
-### 複合条件(or)
+### 複合条件(または)
 
 ```sql
 SELECT *
@@ -92,7 +92,7 @@ WHERE COL1 == 'hoge' OR COL2 <> 'huga';
 df.query('COL1 == "hoge" or COL2 != "huga"')
 ```
 
-### 複合条件(and)
+### 複合条件(かつ)
 
 ```sql
 SELECT *
@@ -109,7 +109,7 @@ df.query('COL1 == "hoge" AND COL2 != "huga"')
 ```sql
 SELECT *
 FROM TABLE
-WHERE COL in (1, 2, 3)';
+WHERE COL IN (1, 2, 3)';
 ```
 
 ```python
@@ -121,7 +121,7 @@ df.query('COL in (1, 2, 3)')
 ```sql
 SELECT *
 FROM TABLE
-WHERE COL not in (1, 2, 3)';
+WHERE COL NOT IN  (1, 2, 3)';
 ```
 
 ```python
@@ -131,9 +131,9 @@ df.query('COL not in (1, 2, 3)')
 ### 範囲
 
 ```sql
-select *
-from TABLE
-where COL between 1000 and 2000;
+SELECT *
+FROM TABLE
+WHERE COL BETWEEN 1000 AND 2000;
 ```
 
 ```python
@@ -144,9 +144,9 @@ df.query('COL >= 1000 and date <= 2000')
 ### パターンマッチング(前方)
 
 ```sql
-select *
-from TABLE
-where NAMEL like '中%';
+SELECT *
+FROM TABLE
+WHERE NAMEL LIKE '中%';
 -- 中で始まる名前の行を抽出 例: 中田
 ```
 
@@ -157,9 +157,9 @@ df.query('item.str.startswith("田")', engine='python')
 ### パターンマッチング(後方)
 
 ```sql
-select *
-from TABLE
-where NAMEL like '%中';
+SELECT *
+FROM TABLE
+WHERE NAMEL LIKE '%中';
 -- 中で終わる名前の行を抽出 例: 田中
 ```
 
@@ -170,9 +170,9 @@ df.query('item.str.endswith("田")', engine='python')
 ### パターンマッチング(部分)
 
 ```sql
-select *
-from TABLE
-where NAMEL like '%中%';
+SELECT *
+FROM TABLE
+WHERE NAMEL LIKE '%中%';
 -- 中を含む名前の行を抽出 例: 中田、田中、三田村
 ```
 
@@ -180,14 +180,14 @@ where NAMEL like '%中%';
 df.query('item.str.contains("田")', engine='python')
 ```
 
-## ソート(order by)
+## ソート(ORDER BY)
 
 ### 昇順
 
 ```sql
-select *
-from TABLE
-order by COL asc;
+SELECT *
+FROM TABLE
+ORDER BY COL ASC;
 ```
 
 ```python
@@ -197,16 +197,16 @@ df.sort_values(by=['COL'], ascending=True)
 ### 降順
 
 ```sql
-select *
-from TABLE
-order by COL desc;
+SELECT *
+FROM TABLE
+ORDER BY COL DESC;
 ```
 
 ```python
 df.sort_values(by=['COL'], ascending=False)
 ```
 
-## 重複削除(distinct)
+## 重複削除(DISTINCT)
 
 ```sql
 SELECT DISTINCT COL1, COL2
@@ -218,7 +218,7 @@ FROM TABLE
 df[~df.duplicated(subset=['COL1'])].loc[:, ["COL1", "COL2"]]
 ```
 
-## 集合関数(sum,max,min,avg,count)
+## 集合関数(SUM,MAX,MIN,AVG,COUNT)
 
 ```sql
 SELECT SUM(COL),MAX(COL),MIN(COL),AVG(COL),COUNT(COL)
@@ -233,16 +233,16 @@ df['COL'].mean() # avg by sql
 len(df) # count by sql
 ```
 
-## グループ化(group by)
+## グループ化(GROUP BY)
 
 グループ化は、groupbyメソッドを使います。
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
 
 
 ```sql
-select COL1, AVG(COL2)
-from TABLE
-group by COL1;
+SELECT COL1, AVG(COL2)
+FROM TABLE
+GROUP BY COL1;
 ```
 
 ```python
@@ -250,13 +250,13 @@ df_mean=df.groupby("COL1").mean()
 df_mean.loc[:, ["COL2"]]
 ```
 
-## グループ化の検索(having)
+## グループ化の検索(HAVING)
 
 
 ```sql
-select COL1, AVG(COL2)
-from TABLE
-group by COL1
+SELECT COL1, AVG(COL2)
+FROM TABLE
+GROUP BY COL1
 HAVING AVG(COL2) > 1000
 ```
 
