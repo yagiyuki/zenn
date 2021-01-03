@@ -24,11 +24,23 @@ FROM TABLE;
 df.loc[:, ["COL1", "COL2"]]
 ```
 
+## 条件指定(where)
 
-## 条件指定
+条件指定は、queryメソッドを使います。
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html
 
-条件指定は、query
-TODO: コラム queryを使わない方法
+:::message
+条件指定は、queryを使わない記法もあります。
+好みはありますが、queryメソッドのほうが直感的に書けるという利点があります。
+
+```python
+# queryを使う場合
+df.query('COL1 == "hoge" and COL2 != "huga"')
+
+# queryを使わない場合
+df[(df["COL1"]=="hoge") & (df["COL2"] != "huga")]
+```
+:::
 
 ### 一致
 
@@ -40,9 +52,8 @@ where COL1 = 'hoge';
 
 ```python
 df.query('COL1 == "hoge"')
+# クオテーションに注意
 ```
-
-Pandasは、クオテーションに注意
 
 ### 不一致
 
@@ -58,7 +69,7 @@ df.query('COL1 != "hoge"')
 
 ### 大小比較
 
-1000より大きい
+
 ```sql
 SELECT *
 FROM TABLE
@@ -67,17 +78,6 @@ WHERE COL1 > 1000;
 
 ```python
 df.query('COL1 > 1000')
-```
-
-1000以下
-```sql
-SELECT *
-FROM TABLE
-WHERE COL1 <= 1000;
-```
-
-```python
-df.query('COL1 <= 1000')
 ```
 
 ### 複合条件(or)
@@ -92,7 +92,7 @@ WHERE COL1 == 'hoge' OR COL2 <> 'huga';
 df.query('COL1 == "hoge" or COL2 != "huga"')
 ```
 
-### 複合条件 (and)
+### 複合条件(and)
 
 ```sql
 SELECT *
@@ -106,6 +106,7 @@ df.query('COL1 == "hoge" AND COL2 != "huga"')
 
 ### 含む
 
+```sql
 SELECT *
 FROM TABLE
 WHERE COL in (1, 2, 3)';
@@ -179,7 +180,7 @@ where NAMEL like '%中%';
 df.query('item.str.contains("田")', engine='python')
 ```
 
-## ソート
+## ソート(order by)
 
 ### 昇順
 
@@ -205,7 +206,7 @@ order by COL desc;
 df.sort_values(by=['COL'], ascending=False)
 ```
 
-## 重複削除
+## 重複削除(distinct)
 
 ```sql
 SELECT DISTINCT COL1, COL2
@@ -217,7 +218,7 @@ FROM TABLE
 df[~df.duplicated(subset=['COL1'])].loc[:, ["COL1", "COL2"]]
 ```
 
-## 集合関数
+## 集合関数(sum,max,min,avg,count)
 
 ```sql
 SELECT SUM(COL),MAX(COL),MIN(COL),AVG(COL),COUNT(COL)
@@ -232,8 +233,11 @@ df['COL'].mean() # avg by sql
 len(df) # count by sql
 ```
 
+## グループ化(group by)
 
-## グループ化
+グループ化は、groupbyメソッドを使います。
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html
+
 
 ```sql
 select COL1, AVG(COL2)
@@ -246,7 +250,8 @@ df_mean=df.groupby("COL1").mean()
 df_mean.loc[:, ["COL2"]]
 ```
 
-## グループ化の検索
+## グループ化の検索(having)
+
 
 ```sql
 select COL1, AVG(COL2)
