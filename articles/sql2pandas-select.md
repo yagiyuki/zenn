@@ -2,7 +2,7 @@
 title: "sqlからpandasを逆引き(SELECT編)"
 emoji: "🐼"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["python", "機械学習"]
+topics: ["python", "機械学習", "SQL"]
 published: true
 ---
 
