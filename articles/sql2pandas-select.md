@@ -47,11 +47,11 @@ df[(df["COL1"]=="hoge") & (df["COL2"] != "huga")]
 ```sql
 SELECT *
 FROM TABLE
-WHERE COL1 = 'hoge';
+WHERE COL = 'hoge';
 ```
 
 ```python
-df.query('COL1 == "hoge"')
+df.query('COL == "hoge"')
 # クオテーションに注意
 ```
 
@@ -60,11 +60,11 @@ df.query('COL1 == "hoge"')
 ```sql
 SELECT *
 FROM TABLE
-WHERE COL1 <> 'hoge';
+WHERE COL <> 'hoge';
 ```
 
 ```python
-df.query('COL1 != "hoge"')
+df.query('COL != "hoge"')
 ```
 
 ### 大小比較
