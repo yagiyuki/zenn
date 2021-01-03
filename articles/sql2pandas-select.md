@@ -3,7 +3,7 @@ title: "sqlからpandasを逆引き(SELECT編)"
 emoji: "🐼"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["python", "機械学習"]
-published: false
+published: true
 ---
 
 こんにちは。ヤギユキ([@yagiyuki06](https://twitter.com/yagiyuki06))です。
