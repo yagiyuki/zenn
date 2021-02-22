@@ -2,7 +2,7 @@
 title: "機械学習の高速化テクニック3選"
 emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["機械学習", "Python"]
+topics: ["機械学習", "Python", "MLOps"]
 published: true
 ---
 
