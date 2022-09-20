@@ -1,2 +1,5 @@
-# zenn
-zenn記事管理
+# Zenn
+
+## Zenn CLI
+
+* [📘 How to use](https://zenn.dev/zenn/articles/zenn-cli-guide)
