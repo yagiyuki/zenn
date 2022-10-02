@@ -156,5 +156,6 @@ print('母比率の{}%信頼区間: {:.3f} < p < {:.3f}'.format(alpha*100, p - Z
 
 信頼区間の幅を小さくしたい場合は、評価データの数を増やせば小さくすることができます。
 信頼区間の幅を狙った範囲に抑えるように評価データを用意することもできます。
+https://zenn.dev/yagiyuki/articles/ml_data_set_statistics
 
 以上です。
