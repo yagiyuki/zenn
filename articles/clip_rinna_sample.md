@@ -1,5 +1,5 @@
 ---
-title: "rinnaのCLIPのサンプルコードを解説"
+title: "rinnaのCLIPで遊んでみた"
 emoji: "📎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["機械学習", "Python"]
