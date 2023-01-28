@@ -3,7 +3,7 @@ title: "GO言語の公式チュートリアルのExercise回答"
 emoji: "💨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Go"]
-published: true
+published: false
 ---
 
 
