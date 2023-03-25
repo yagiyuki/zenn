@@ -1,5 +1,5 @@
 ---
-title: "rinnaのCLIPで遊んでみた"
+title: "画像分類の革命児、CLIPによる画像分類サンプル解説"
 emoji: "📎"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["機械学習", "Python"]
