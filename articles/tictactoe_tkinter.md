@@ -3,7 +3,7 @@ title: "Python初心者必見！Tkinterを使って簡単に○✗ゲームを�
 emoji: "🎮"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Python", "tkinter", "Game", "gui"]
-published: true
+published: false
 ---
 
 ## はじめに
