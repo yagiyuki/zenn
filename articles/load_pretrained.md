@@ -1,6 +1,6 @@
 ---
 title: "Transformersの'from_pretrained'の使い方とリスクを考察"
-emoji: ""
+emoji: "⚡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Python", "機械学習", "transformer"]
 published: true
