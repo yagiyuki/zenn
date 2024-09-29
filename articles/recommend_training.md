@@ -2,7 +2,7 @@
 title: "効率重視のエンジニア向け！鍛えられる範囲が広い筋トレ種目トップ5"
 emoji: "💪"
 type: "idea" # tech: 技術記事 / idea: アイデア
-topics: ["筋トレ", "健康管理", "不健康エンジニア"]
+topics: ["筋トレ", "健康管理", "不健康エンジニア", "chatgpt"]
 published: true
 ---
 
