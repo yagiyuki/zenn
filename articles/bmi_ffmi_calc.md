@@ -1,5 +1,5 @@
 ---
-title: "筋トレ愛好家のために自身の肉体を数値化して評価するツールを作成"
+title: "Streamlitで実現！自分の肉体評価をサポートするBMI＆FFMI計算アプリ"
 emoji: "👻"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["筋トレ", "健康管理", "streamlit"]
