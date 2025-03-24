@@ -3,7 +3,7 @@ title: "dockerfileのCOPYでゴミファイルが入るのを防ぐ"
 emoji: "🕌"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Docker", "Linux"]
-published: true
+published: false
 ---
 
 Dockefileの`COPY`命令を使う際にゴミデータを一緒にコピーしてしまうという問題の回避策をまとめます。

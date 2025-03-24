@@ -3,7 +3,7 @@ title: "PythonでQPS上限を指定して画像をダウンロードする"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Python"]
-published: true
+published: false
 ---
 
 Pythonで指定QPS範囲で画像をダウンロードするプログラムを書きました。
