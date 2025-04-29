@@ -2,7 +2,7 @@
 title: "うっかり GitHub に公開しない！5分でできる生成AI APIキー管理するTips紹介"
 emoji: "🗝️"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["生成AI", "APIキー", "Python", "Git", "セキュリティ"]
+topics: ["generativeai", "python", "github", "セキュリティ対策", "gemini"]
 published: true
 ---
 
