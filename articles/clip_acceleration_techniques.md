@@ -1,5 +1,5 @@
 ---
-title: "PyTorchでCLIP推論を高速化する ── バッチ処理の実践と効果検証"
+title: "バッチ処理でCLIP推論を高速化: 実装と検証"
 emoji: "⚡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["pytorch", "clip", "マルチモーダルai", "速度改善"]
