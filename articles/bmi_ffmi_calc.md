@@ -3,7 +3,7 @@ title: "Streamlitで実現！自分の肉体評価をサポートするBMI＆FFM
 emoji: "👻"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["筋トレ", "健康管理", "streamlit"]
-published: true
+published: false
 ---
 
 こんにちは。今回は、筋トレ愛好家が自分の体格を数値化して評価するためのWebアプリを作ったので紹介します。
