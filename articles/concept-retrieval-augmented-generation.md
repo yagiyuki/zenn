@@ -3,7 +3,7 @@ title: "【中学生でもわかるレベルで説明】LLMを強化する『RAG
 emoji: "💡"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["AI", "LLM", "RAG", "機械学習", "ChatGPT"]
-published: true # false: 下書き / true: 公開
+published: false # false: 下書き / true: 公開
 ---
 
 ## はじめに

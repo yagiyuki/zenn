@@ -3,7 +3,7 @@ title: "AIとAIエージェントの違いがざっくりわかる記事 〜AI�
 emoji: "🔍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["ai", "生成ai"]
-published: true
+published: false
 published_at: 2025-01-20 08:00 # 未来の日時を指定する
 ---
 

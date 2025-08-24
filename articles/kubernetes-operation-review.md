@@ -3,7 +3,7 @@ title: "いまさらだけど振り返る、Kubernetesを使用して感じた�
 emoji: "🗂"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["kubernetes", "Docker", "運用"]
-published: true
+published: false
 published_at: 2025-03-23 20:00 # 未来の日時を指定する
 ---
 
