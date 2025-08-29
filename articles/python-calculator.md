@@ -1,5 +1,5 @@
 ---
-title: "Pythonを電卓代わりする人へ！大きな数字をカンマ区切りで自動表示する方法"
+title: "Pythonで数値を3桁カンマ区切り表示する方法【対話モードで自動反映】"
 emoji: "🔢"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["python", "tips"]
